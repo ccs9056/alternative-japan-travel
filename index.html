@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alternative Japan Travel — Skip the Crowds, Find the Real Japan</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            poppins: ['Poppins', 'sans-serif'],
+          },
+          colors: {
+            primary: '#E63946',
+            'primary-dark': '#C62828',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    * { font-family: 'Poppins', sans-serif; }
+
+    /* Accordion destination cards */
+    .destination-card {
+      flex: 1;
+      transition: flex 0.5s ease, transform 0.3s ease;
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+      min-height: 400px;
+    }
+    .destination-card:hover {
+      flex: 3;
+    }
+    .destination-card .overlay-content {
+      opacity: 0;
+      transition: opacity 0.4s ease 0.1s;
+    }
+    .destination-card:hover .overlay-content {
+      opacity: 1;
+    }
+
+    /* Smooth scroll */
+    html { scroll-behavior: smooth; }
+
+    /* Hero video cover */
+    .hero-video {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-800">
+
+  <!-- ===================== 1. NAVIGATION ===================== -->
+  <nav class="fixed top-0 left-0 right-0 bg-white shadow-sm z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <!-- Logo -->
+        <a href="#" class="text-xl font-bold text-gray-900 tracking-tight">
+          <span class="text-primary">Alternative</span> Japan
+        </a>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="#about" class="text-sm font-medium text-gray-600 hover:text-primary transition">About</a>
+          <a href="#destinations" class="text-sm font-medium text-gray-600 hover:text-primary transition">Destinations</a>
+          <a href="#bucket-list" class="text-sm font-medium text-gray-600 hover:text-primary transition">The Swaps</a>
+          <a href="#natural-wonders" class="text-sm font-medium text-gray-600 hover:text-primary transition">Beyond the Crowds</a>
+          <a href="#plan" class="text-sm font-medium text-gray-600 hover:text-primary transition">Plan Your Trip</a>
+          <a href="#ebook" class="bg-primary text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-primary-dark transition">
+            Start Here
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="md:hidden text-gray-600 focus:outline-none">
+          <i class="fas fa-bars text-xl"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+      <div class="px-4 py-3 space-y-2">
+        <a href="#about" class="block text-sm font-medium text-gray-600 hover:text-primary py-2">About</a>
+        <a href="#destinations" class="block text-sm font-medium text-gray-600 hover:text-primary py-2">Destinations</a>
+        <a href="#bucket-list" class="block text-sm font-medium text-gray-600 hover:text-primary py-2">The Swaps</a>
+        <a href="#natural-wonders" class="block text-sm font-medium text-gray-600 hover:text-primary py-2">Beyond the Crowds</a>
+        <a href="#plan" class="block text-sm font-medium text-gray-600 hover:text-primary py-2">Plan Your Trip</a>
+        <a href="#ebook" class="block bg-primary text-white px-5 py-2 rounded-full text-sm font-semibold text-center hover:bg-primary-dark transition mt-2">
+          Start Here
+        </a>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- ===================== 2. HERO SECTION (VIDEO BG) ===================== -->
+  <section class="relative h-screen flex items-center justify-center overflow-hidden">
+    <!-- Video Background — Replace src with your own video file -->
+    <!-- <video class="hero-video" autoplay muted loop playsinline poster="https://placehold.co/1920x1080/1a1a2e/ffffff?text=Japan">
+      <source src="your-video.mp4" type="video/mp4">
+    </video> -->
+
+    <!-- Fallback Background Image (shown until you add a video) -->
+    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://placehold.co/1920x1080/1a1a2e/ffffff?text=Mount+Fuji+%7C+Japan');">
+    </div>
+
+    <!-- Dark Overlay -->
+    <div class="absolute inset-0 bg-black/40"></div>
+
+    <!-- Hero Content -->
+    <div class="relative z-10 text-center px-4 max-w-4xl">
+      <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight tracking-tight mb-6">
+        SKIP THE CROWDS.<br>FIND THE REAL JAPAN.
+      </h1>
+      <p class="text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+        Curated alternatives to Japan's most overcrowded destinations — calmer, more rewarding, still accessible.
+      </p>
+      <a href="#destinations" class="inline-block bg-primary text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-primary-dark transition transform hover:scale-105">
+        Discover Alternatives
+      </a>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce">
+      <i class="fas fa-chevron-down text-white text-2xl"></i>
+    </div>
+  </section>
+
+
+  <!-- ===================== 3. ABOUT SECTION ===================== -->
+  <section id="about" class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center gap-12">
+        <!-- Couple Photo -->
+        <div class="md:w-1/2 flex justify-center">
+          <div class="relative">
+            <img src="https://placehold.co/500x500/f8f8f8/cccccc?text=Your+Photo" alt="About Us"
+                 class="rounded-2xl shadow-lg w-80 h-80 object-cover">
+            <!-- Decorative accent -->
+            <div class="absolute -bottom-4 -right-4 w-80 h-80 border-4 border-primary/20 rounded-2xl -z-10"></div>
+          </div>
+        </div>
+
+        <!-- About Text -->
+        <div class="md:w-1/2 text-center md:text-left">
+          <p class="text-primary font-semibold text-sm uppercase tracking-widest mb-2">The Great Exchange</p>
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            Done With the <span class="text-primary">Golden Route?</span>
+          </h2>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            We've been there — shoulder-to-shoulder at Fushimi Inari, queuing for hours in Shibuya, watching Kyoto through a wall of selfie sticks. Japan is incredible, but the standard tourist track can be exhausting.
+          </p>
+          <p class="text-gray-600 leading-relaxed mb-6">
+            So we built this site. Every recommendation is a practical, one-to-one swap: trade a congested hotspot for an equally rewarding alternative that's calmer, more accessible, and genuinely enjoyable.
+          </p>
+          <a href="#" class="text-primary font-semibold hover:underline inline-flex items-center gap-2">
+            Our Approach <i class="fas fa-arrow-right text-sm"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===================== 4. FREE EBOOK / EMAIL SIGNUP ===================== -->
+  <section id="ebook" class="py-20 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center gap-12">
+        <!-- Ebook Text -->
+        <div class="md:w-1/2 text-center md:text-left">
+          <p class="text-primary font-semibold text-sm uppercase tracking-widest mb-2">Free Download</p>
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            The Crowd-Free Japan Starter Guide
+          </h2>
+          <p class="text-gray-600 leading-relaxed mb-6">
+            Our free guide with 10 direct swaps for Japan's most overcrowded spots — plus timing tips, transit hacks, and a sample itinerary that avoids the tourist crush entirely.
+          </p>
+
+          <!-- Email Signup Form (UI only) -->
+          <form class="flex flex-col sm:flex-row gap-3 max-w-md" onsubmit="event.preventDefault(); alert('Email signup coming soon!');">
+            <input type="email" placeholder="Enter your email" required
+                   class="flex-1 px-5 py-3 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50 text-sm">
+            <button type="submit"
+                    class="bg-primary text-white px-6 py-3 rounded-full text-sm font-semibold hover:bg-primary-dark transition whitespace-nowrap">
+              Get Free Guide
+            </button>
+          </form>
+          <p class="text-xs text-gray-400 mt-3">No spam, ever. Unsubscribe anytime.</p>
+        </div>
+
+        <!-- Ebook Mockup -->
+        <div class="md:w-1/2 flex justify-center">
+          <img src="https://placehold.co/400x500/fff5f5/E63946?text=Crowd-Free%0AJapan%0AStarter%0AGuide" alt="Crowd-Free Japan Starter Guide"
+               class="rounded-lg shadow-2xl w-72 transform rotate-2 hover:rotate-0 transition-transform duration-300">
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===================== 5. TOP DESTINATIONS (ACCORDION CARDS) ===================== -->
+  <section id="destinations" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <p class="text-primary font-semibold text-sm uppercase tracking-widest mb-2">The Alternatives</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Crowd-Free Destinations</h2>
+      </div>
+
+      <!-- Accordion Cards (Desktop) -->
+      <div class="hidden md:flex gap-3 h-[450px]">
+        <!-- Kanazawa -->
+        <div class="destination-card rounded-2xl bg-cover bg-center group"
+             style="background-image: url('https://placehold.co/800x600/1a6b3a/ffffff?text=Kanazawa');">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent rounded-2xl"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+            <h3 class="text-2xl font-bold">Kanazawa</h3>
+            <div class="overlay-content mt-2">
+              <p class="text-sm text-white/80">Kyoto's calm twin — pristine gardens, geisha districts, and samurai heritage without the crowds.</p>
+              <a href="#" class="inline-block mt-3 text-sm font-semibold text-primary bg-white px-4 py-2 rounded-full hover:bg-gray-100 transition">
+                Explore Kanazawa →
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tohoku -->
+        <div class="destination-card rounded-2xl bg-cover bg-center group"
+             style="background-image: url('https://placehold.co/800x600/4A6741/ffffff?text=Tohoku');">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent rounded-2xl"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+            <h3 class="text-2xl font-bold">Tohoku</h3>
+            <div class="overlay-content mt-2">
+              <p class="text-sm text-white/80">Japan's wild north — dramatic coastlines, hot springs, and festivals few tourists ever see.</p>
+              <a href="#" class="inline-block mt-3 text-sm font-semibold text-primary bg-white px-4 py-2 rounded-full hover:bg-gray-100 transition">
+                Explore Tohoku →
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kyushu -->
+        <div class="destination-card rounded-2xl bg-cover bg-center group"
+             style="background-image: url('https://placehold.co/800x600/FF6B35/ffffff?text=Kyushu');">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent rounded-2xl"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+            <h3 class="text-2xl font-bold">Kyushu</h3>
+            <div class="overlay-content mt-2">
+              <p class="text-sm text-white/80">Volcanic landscapes, world-class onsen towns, and the best ramen in Japan.</p>
+              <a href="#" class="inline-block mt-3 text-sm font-semibold text-primary bg-white px-4 py-2 rounded-full hover:bg-gray-100 transition">
+                Explore Kyushu →
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Takayama -->
+        <div class="destination-card rounded-2xl bg-cover bg-center group"
+             style="background-image: url('https://placehold.co/800x600/8B4513/ffffff?text=Takayama');">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent rounded-2xl"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+            <h3 class="text-2xl font-bold">Takayama</h3>
+            <div class="overlay-content mt-2">
+              <p class="text-sm text-white/80">Edo-era streets in the Japanese Alps — morning markets, sake breweries, and mountain air.</p>
+              <a href="#" class="inline-block mt-3 text-sm font-semibold text-primary bg-white px-4 py-2 rounded-full hover:bg-gray-100 transition">
+                Explore Takayama →
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Naoshima -->
+        <div class="destination-card rounded-2xl bg-cover bg-center group"
+             style="background-image: url('https://placehold.co/800x600/4A90D9/ffffff?text=Naoshima');">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent rounded-2xl"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+            <h3 class="text-2xl font-bold">Naoshima</h3>
+            <div class="overlay-content mt-2">
+              <p class="text-sm text-white/80">Art island in the Seto Inland Sea — world-class museums on a tranquil island escape.</p>
+              <a href="#" class="inline-block mt-3 text-sm font-semibold text-primary bg-white px-4 py-2 rounded-full hover:bg-gray-100 transition">
+                Explore Naoshima →
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Cards (stacked) -->
+      <div class="md:hidden grid grid-cols-1 gap-4">
+        <a href="#" class="block relative rounded-2xl overflow-hidden h-48 bg-cover bg-center" style="background-image: url('https://placehold.co/800x400/1a6b3a/ffffff?text=Kanazawa');">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+          <div class="absolute bottom-4 left-4 text-white"><h3 class="text-xl font-bold">Kanazawa</h3></div>
+        </a>
+        <a href="#" class="block relative rounded-2xl overflow-hidden h-48 bg-cover bg-center" style="background-image: url('https://placehold.co/800x400/4A6741/ffffff?text=Tohoku');">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+          <div class="absolute bottom-4 left-4 text-white"><h3 class="text-xl font-bold">Tohoku</h3></div>
+        </a>
+        <a href="#" class="block relative rounded-2xl overflow-hidden h-48 bg-cover bg-center" style="background-image: url('https://placehold.co/800x400/FF6B35/ffffff?text=Kyushu');">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+          <div class="absolute bottom-4 left-4 text-white"><h3 class="text-xl font-bold">Kyushu</h3></div>
+        </a>
+        <a href="#" class="block relative rounded-2xl overflow-hidden h-48 bg-cover bg-center" style="background-image: url('https://placehold.co/800x400/8B4513/ffffff?text=Takayama');">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+          <div class="absolute bottom-4 left-4 text-white"><h3 class="text-xl font-bold">Takayama</h3></div>
+        </a>
+        <a href="#" class="block relative rounded-2xl overflow-hidden h-48 bg-cover bg-center" style="background-image: url('https://placehold.co/800x400/4A90D9/ffffff?text=Naoshima');">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+          <div class="absolute bottom-4 left-4 text-white"><h3 class="text-xl font-bold">Naoshima</h3></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===================== 6. BUCKET LIST SECTION ===================== -->
+  <section id="bucket-list" class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <p class="text-primary font-semibold text-sm uppercase tracking-widest mb-2">The Swaps</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Better Alternatives to the Usual</h2>
+        <p class="text-gray-500 mt-3 max-w-xl mx-auto">Trade the overcrowded standards for calmer, equally rewarding experiences.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Card 1 -->
+        <a href="#" class="group relative rounded-2xl overflow-hidden h-64 bg-cover bg-center shadow-md hover:shadow-xl transition-shadow"
+           style="background-image: url('https://placehold.co/400x300/E63946/ffffff?text=Skip%0AFushimi+Inari');">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent group-hover:from-black/70 transition"></div>
+          <div class="absolute bottom-4 left-4 right-4 text-white">
+            <h3 class="font-bold text-lg">Fushimi Inari → Nezu Shrine</h3>
+            <p class="text-xs text-white/70 mt-1">Same torii tunnels, zero crowds</p>
+          </div>
+        </a>
+        <!-- Card 2 -->
+        <a href="#" class="group relative rounded-2xl overflow-hidden h-64 bg-cover bg-center shadow-md hover:shadow-xl transition-shadow"
+           style="background-image: url('https://placehold.co/400x300/FF6B35/ffffff?text=Skip%0ADotonbori');">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent group-hover:from-black/70 transition"></div>
+          <div class="absolute bottom-4 left-4 right-4 text-white">
+            <h3 class="font-bold text-lg">Dotonbori → Kuromon at Dawn</h3>
+            <p class="text-xs text-white/70 mt-1">Better food, fraction of the chaos</p>
+          </div>
+        </a>
+        <!-- Card 3 -->
+        <a href="#" class="group relative rounded-2xl overflow-hidden h-64 bg-cover bg-center shadow-md hover:shadow-xl transition-shadow"
+           style="background-image: url('https://placehold.co/400x300/4A90D9/ffffff?text=Skip%0AShibuya');">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent group-hover:from-black/70 transition"></div>
+          <div class="absolute bottom-4 left-4 right-4 text-white">
+            <h3 class="font-bold text-lg">Shibuya → Shimokitazawa</h3>
+            <p class="text-xs text-white/70 mt-1">Tokyo's real youth culture district</p>
+          </div>
+        </a>
+        <!-- Card 4 -->
+        <a href="#" class="group relative rounded-2xl overflow-hidden h-64 bg-cover bg-center shadow-md hover:shadow-xl transition-shadow"
+           style="background-image: url('https://placehold.co/400x300/2D5016/ffffff?text=Skip%0AArashiyama');">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent group-hover:from-black/70 transition"></div>
+          <div class="absolute bottom-4 left-4 right-4 text-white">
+            <h3 class="font-bold text-lg">Arashiyama → Sagano Back Trails</h3>
+            <p class="text-xs text-white/70 mt-1">Bamboo without the selfie sticks</p>
+          </div>
+        </a>
+        <!-- Card 5 -->
+        <a href="#" class="group relative rounded-2xl overflow-hidden h-64 bg-cover bg-center shadow-md hover:shadow-xl transition-shadow"
+           style="background-image: url('https://placehold.co/400x300/8B4513/ffffff?text=Skip%0AHakone');">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent group-hover:from-black/70 transition"></div>
+          <div class="absolute bottom-4 left-4 right-4 text-white">
+            <h3 class="font-bold text-lg">Hakone → Kinosaki Onsen</h3>
+            <p class="text-xs text-white/70 mt-1">Authentic onsen town, no day-trippers</p>
+          </div>
+        </a>
+        <!-- Card 6 -->
+        <a href="#" class="group relative rounded-2xl overflow-hidden h-64 bg-cover bg-center shadow-md hover:shadow-xl transition-shadow"
+           style="background-image: url('https://placehold.co/400x300/6B21A8/ffffff?text=Skip%0ANara+Park');">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent group-hover:from-black/70 transition"></div>
+          <div class="absolute bottom-4 left-4 right-4 text-white">
+            <h3 class="font-bold text-lg">Nara Park → Miyajima Island</h3>
+            <p class="text-xs text-white/70 mt-1">Wild deer + floating torii, minus the mob</p>
+          </div>
+        </a>
+        <!-- Card 7 -->
+        <a href="#" class="group relative rounded-2xl overflow-hidden h-64 bg-cover bg-center shadow-md hover:shadow-xl transition-shadow"
+           style="background-image: url('https://placehold.co/400x300/1a1a2e/ffffff?text=Skip%0AGolden+Pavilion');">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent group-hover:from-black/70 transition"></div>
+          <div class="absolute bottom-4 left-4 right-4 text-white">
+            <h3 class="font-bold text-lg">Kinkaku-ji → Kennin-ji</h3>
+            <p class="text-xs text-white/70 mt-1">Kyoto's oldest Zen temple, often empty</p>
+          </div>
+        </a>
+        <!-- Card 8 -->
+        <a href="#" class="group relative rounded-2xl overflow-hidden h-64 bg-cover bg-center shadow-md hover:shadow-xl transition-shadow"
+           style="background-image: url('https://placehold.co/400x300/DC2626/ffffff?text=Skip%0ATsukiji');">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent group-hover:from-black/70 transition"></div>
+          <div class="absolute bottom-4 left-4 right-4 text-white">
+            <h3 class="font-bold text-lg">Tsukiji Outer → Yanaka Ginza</h3>
+            <p class="text-xs text-white/70 mt-1">Real local shopping street, not a tourist trap</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===================== 7. NATURAL WONDERS ===================== -->
+  <section id="natural-wonders" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <p class="text-primary font-semibold text-sm uppercase tracking-widest mb-2">Off the Beaten Path</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Japan Beyond the Crowds</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Large Featured -->
+        <div class="md:col-span-2 relative rounded-2xl overflow-hidden h-80 md:h-96 bg-cover bg-center group"
+             style="background-image: url('https://placehold.co/900x500/1a6b3a/ffffff?text=Mount+Fuji+%26+Lake');">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+          <div class="absolute bottom-6 left-6 text-white">
+            <h3 class="text-2xl font-bold">Mount Fuji & Five Lakes</h3>
+            <p class="text-sm text-white/70 mt-1">Japan's iconic sacred mountain</p>
+          </div>
+        </div>
+        <!-- Side -->
+        <div class="relative rounded-2xl overflow-hidden h-80 md:h-96 bg-cover bg-center group"
+             style="background-image: url('https://placehold.co/500x500/2D5016/ffffff?text=Bamboo%0AForest');">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+          <div class="absolute bottom-6 left-6 text-white">
+            <h3 class="text-2xl font-bold">Arashiyama Bamboo</h3>
+            <p class="text-sm text-white/70 mt-1">Kyoto's enchanting grove</p>
+          </div>
+        </div>
+        <!-- Bottom row -->
+        <div class="relative rounded-2xl overflow-hidden h-64 bg-cover bg-center group"
+             style="background-image: url('https://placehold.co/500x400/4A90D9/ffffff?text=Blue%0APond');">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+          <div class="absolute bottom-6 left-6 text-white">
+            <h3 class="text-xl font-bold">Blue Pond, Hokkaido</h3>
+          </div>
+        </div>
+        <div class="relative rounded-2xl overflow-hidden h-64 bg-cover bg-center group"
+             style="background-image: url('https://placehold.co/500x400/FF6B35/ffffff?text=Autumn%0ALeaves');">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+          <div class="absolute bottom-6 left-6 text-white">
+            <h3 class="text-xl font-bold">Autumn Foliage</h3>
+          </div>
+        </div>
+        <div class="relative rounded-2xl overflow-hidden h-64 bg-cover bg-center group"
+             style="background-image: url('https://placehold.co/500x400/6B21A8/ffffff?text=Wisteria%0ATunnel');">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+          <div class="absolute bottom-6 left-6 text-white">
+            <h3 class="text-xl font-bold">Wisteria Tunnel</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===================== 8. PLAN SMART, TRAVEL EASY (AFFILIATE SECTION) ===================== -->
+  <section id="plan" class="py-20 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <p class="text-primary font-semibold text-sm uppercase tracking-widest mb-2">Essential Tools</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Plan Smart, Travel Easy</h2>
+        <p class="text-gray-500 mt-3 max-w-xl mx-auto">Our recommended tools and services to make your Japan trip seamless.</p>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+        <!-- Flights -->
+        <a href="#" class="bg-white rounded-2xl p-6 text-center shadow-sm hover:shadow-lg transition-shadow group">
+          <div class="w-14 h-14 mx-auto mb-4 bg-red-50 rounded-xl flex items-center justify-center group-hover:bg-primary/10 transition">
+            <i class="fas fa-plane text-primary text-xl"></i>
+          </div>
+          <h3 class="font-semibold text-gray-900 text-sm">Flights</h3>
+          <p class="text-xs text-gray-400 mt-1">Best deals to Japan</p>
+        </a>
+        <!-- Hotels -->
+        <a href="#" class="bg-white rounded-2xl p-6 text-center shadow-sm hover:shadow-lg transition-shadow group">
+          <div class="w-14 h-14 mx-auto mb-4 bg-red-50 rounded-xl flex items-center justify-center group-hover:bg-primary/10 transition">
+            <i class="fas fa-hotel text-primary text-xl"></i>
+          </div>
+          <h3 class="font-semibold text-gray-900 text-sm">Hotels</h3>
+          <p class="text-xs text-gray-400 mt-1">Top-rated stays</p>
+        </a>
+        <!-- Rail Pass -->
+        <a href="#" class="bg-white rounded-2xl p-6 text-center shadow-sm hover:shadow-lg transition-shadow group">
+          <div class="w-14 h-14 mx-auto mb-4 bg-red-50 rounded-xl flex items-center justify-center group-hover:bg-primary/10 transition">
+            <i class="fas fa-train text-primary text-xl"></i>
+          </div>
+          <h3 class="font-semibold text-gray-900 text-sm">Rail Pass</h3>
+          <p class="text-xs text-gray-400 mt-1">JR Pass savings</p>
+        </a>
+        <!-- SIM Card -->
+        <a href="#" class="bg-white rounded-2xl p-6 text-center shadow-sm hover:shadow-lg transition-shadow group">
+          <div class="w-14 h-14 mx-auto mb-4 bg-red-50 rounded-xl flex items-center justify-center group-hover:bg-primary/10 transition">
+            <i class="fas fa-sim-card text-primary text-xl"></i>
+          </div>
+          <h3 class="font-semibold text-gray-900 text-sm">SIM / eSIM</h3>
+          <p class="text-xs text-gray-400 mt-1">Stay connected</p>
+        </a>
+        <!-- Travel Insurance -->
+        <a href="#" class="bg-white rounded-2xl p-6 text-center shadow-sm hover:shadow-lg transition-shadow group">
+          <div class="w-14 h-14 mx-auto mb-4 bg-red-50 rounded-xl flex items-center justify-center group-hover:bg-primary/10 transition">
+            <i class="fas fa-shield-halved text-primary text-xl"></i>
+          </div>
+          <h3 class="font-semibold text-gray-900 text-sm">Insurance</h3>
+          <p class="text-xs text-gray-400 mt-1">Travel with peace</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===================== 9. FOOTER ===================== -->
+  <footer class="bg-gray-900 text-white py-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+        <!-- Brand -->
+        <div class="md:col-span-1">
+          <h3 class="text-xl font-bold mb-4"><span class="text-primary">Japan</span> Travel Blog</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            Curated alternatives to Japan's most overcrowded destinations. Skip the crowds, find the real Japan.
+          </p>
+          <!-- Social -->
+          <div class="flex gap-4 mt-6">
+            <a href="#" class="text-gray-400 hover:text-primary transition"><i class="fab fa-instagram text-lg"></i></a>
+            <a href="#" class="text-gray-400 hover:text-primary transition"><i class="fab fa-youtube text-lg"></i></a>
+            <a href="#" class="text-gray-400 hover:text-primary transition"><i class="fab fa-pinterest text-lg"></i></a>
+            <a href="#" class="text-gray-400 hover:text-primary transition"><i class="fab fa-tiktok text-lg"></i></a>
+          </div>
+        </div>
+
+        <!-- Destinations -->
+        <div>
+          <h4 class="font-semibold mb-4 text-sm uppercase tracking-widest text-gray-300">Destinations</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-400 hover:text-white text-sm transition">Kanazawa</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white text-sm transition">Tohoku</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white text-sm transition">Kyushu</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white text-sm transition">Takayama</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white text-sm transition">Naoshima</a></li>
+          </ul>
+        </div>
+
+        <!-- Resources -->
+        <div>
+          <h4 class="font-semibold mb-4 text-sm uppercase tracking-widest text-gray-300">Resources</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-400 hover:text-white text-sm transition">Travel Guide</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white text-sm transition">Itineraries</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white text-sm transition">Budget Tips</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white text-sm transition">Japan Rail Pass</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white text-sm transition">Best Time to Visit</a></li>
+          </ul>
+        </div>
+
+        <!-- Company -->
+        <div>
+          <h4 class="font-semibold mb-4 text-sm uppercase tracking-widest text-gray-300">Company</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-400 hover:text-white text-sm transition">About Us</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white text-sm transition">Contact</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white text-sm transition">Privacy Policy</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white text-sm transition">Disclaimer</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row items-center justify-between">
+        <p class="text-gray-500 text-xs">&copy; 2026 Alternative Japan Travel. All rights reserved.</p>
+        <p class="text-gray-600 text-xs mt-2 md:mt-0">
+          This site contains affiliate links. We may earn a commission at no extra cost to you.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ===================== SCRIPTS ===================== -->
+  <script>
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Close mobile menu on link click
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    // Navbar background on scroll
+    const nav = document.querySelector('nav');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        nav.classList.add('shadow-md');
+      } else {
+        nav.classList.remove('shadow-md');
+      }
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+# Video files
+*.mp4
+*.mov
+
+# Large images/screenshots
+*.png
+
+# Internal docs
+CLAUDE*.md
+
+# OS files
+Thumbs.db
+.DS_Store
