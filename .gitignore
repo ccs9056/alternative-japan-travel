@@ -5,8 +5,9 @@
 # Large images/screenshots
 *.png
 
-# Internal docs
-CLAUDE*.md
+# Internal docs (old design reference)
+CLAUDE\ (2).md
+design-reference.md
 
 # OS files
 Thumbs.db
