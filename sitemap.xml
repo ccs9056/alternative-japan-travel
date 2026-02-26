@@ -2,44 +2,81 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://alternative-japan-travel.vercel.app/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://alternative-japan-travel.vercel.app/greater-tokyo.html</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://alternative-japan-travel.vercel.app/beyond-kyoto-osaka.html</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://alternative-japan-travel.vercel.app/japanese-alps.html</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://alternative-japan-travel.vercel.app/northern-japan.html</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://alternative-japan-travel.vercel.app/southern-japan.html</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://alternative-japan-travel.vercel.app/okinawa.html</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <!-- Articles -->
+  <url>
+    <loc>https://alternative-japan-travel.vercel.app/kanazawa-vs-kyoto.html</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://alternative-japan-travel.vercel.app/kinosaki-onsen-hop.html</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://alternative-japan-travel.vercel.app/koyasan-okunoin.html</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://alternative-japan-travel.vercel.app/kumano-kodo-guide.html</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://alternative-japan-travel.vercel.app/kobe-beef-guide.html</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://alternative-japan-travel.vercel.app/mt-shosha-himeji.html</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 </urlset>

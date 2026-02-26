@@ -140,39 +140,37 @@
 
   <main>
 
-  <!-- HERO -->
-  <section class="relative h-[50vh] flex items-end overflow-hidden">
-    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://placehold.co/1920x1080/D4A843/ffffff?text=Kanazawa+vs+Kyoto');"></div>
-    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-black/10"></div>
-    <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
+  <!-- HERO (compact text, no image) -->
+  <section class="pt-24 pb-8">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
       <nav aria-label="Breadcrumb" class="mb-4">
-        <ol class="flex items-center space-x-2 text-sm text-white/70">
-          <li><a href="index.html" class="hover:text-white transition">Home</a></li>
+        <ol class="flex items-center space-x-2 text-sm text-gray-400">
+          <li><a href="index.html" class="hover:text-primary transition">Home</a></li>
           <li><i class="fas fa-chevron-right text-xs"></i></li>
-          <li><a href="japanese-alps.html" class="hover:text-white transition">Japanese Alps</a></li>
+          <li><a href="japanese-alps.html" class="hover:text-primary transition">Japanese Alps</a></li>
           <li><i class="fas fa-chevron-right text-xs"></i></li>
-          <li class="text-white font-medium">Kanazawa vs Kyoto</li>
+          <li class="text-gray-600 font-medium">Kanazawa vs Kyoto</li>
         </ol>
       </nav>
-      <div class="mb-3 flex flex-wrap gap-2">
-        <span class="text-xs font-semibold bg-white/90 text-gray-800 px-3 py-1 rounded-full shadow-sm">
-          <i class="fas fa-balance-scale mr-1 text-primary"></i> Comparison
+      <div class="mb-4 flex flex-wrap gap-2">
+        <span class="text-xs font-semibold bg-red-50 text-primary px-3 py-1 rounded-full">
+          <i class="fas fa-balance-scale mr-1"></i> Comparison
         </span>
-        <span class="text-xs font-semibold bg-white/90 text-gray-800 px-3 py-1 rounded-full shadow-sm">
-          <i class="fas fa-clock mr-1 text-primary"></i> 8 min read
+        <span class="text-xs font-semibold bg-gray-100 text-gray-600 px-3 py-1 rounded-full">
+          <i class="fas fa-clock mr-1"></i> 8 min read
         </span>
       </div>
-      <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-tight tracking-tight mb-3">
+      <h1 class="text-3xl md:text-4xl font-extrabold text-gray-900 leading-tight tracking-tight mb-3">
         Kanazawa vs Kyoto: The Honest Comparison
       </h1>
-      <p class="text-lg text-white/90 max-w-2xl">
+      <p class="text-lg text-gray-500 max-w-2xl">
         Do Kyoto first. Do Kanazawa second. Here's why.
       </p>
     </div>
   </section>
 
   <!-- QUICK TAKE BOX -->
-  <section class="bg-gray-50 border-b border-gray-200">
+  <section class="bg-gray-50 border-y border-gray-200">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
         <div>
@@ -192,6 +190,20 @@
           <p class="font-semibold text-gray-900">2 nights Kanazawa / 3–4 nights Kyoto</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- INSIDER TIPS -->
+  <section class="bg-amber-50 border-b border-amber-200">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+      <h3 class="text-sm font-bold text-gray-900 mb-3"><i class="fas fa-lightbulb text-primary mr-2"></i>Insider Tips</h3>
+      <ul class="space-y-2 text-sm text-gray-700">
+        <li class="flex items-start gap-2"><i class="fas fa-check text-primary text-xs mt-1.5 shrink-0"></i>Everything in Kanazawa is walkable &mdash; 20 minutes between all major sights. No bus needed.</li>
+        <li class="flex items-start gap-2"><i class="fas fa-check text-primary text-xs mt-1.5 shrink-0"></i>Kenrokuen in December with yukitsuri (snow rope supports) under fresh snow is the best garden moment in Japan.</li>
+        <li class="flex items-start gap-2"><i class="fas fa-check text-primary text-xs mt-1.5 shrink-0"></i>Omicho Ichibazushi (kaiten sushi inside the market) is the repeat-visitor pick for seafood.</li>
+        <li class="flex items-start gap-2"><i class="fas fa-check text-primary text-xs mt-1.5 shrink-0"></i>Gyokuseninmaru Garden next to Kenrokuen is free and locals prefer it.</li>
+        <li class="flex items-start gap-2"><i class="fas fa-check text-primary text-xs mt-1.5 shrink-0"></i>Winter: lower hotel prices, crab season, fewer tourists. The best time nobody visits.</li>
+      </ul>
     </div>
   </section>
 
@@ -342,17 +354,17 @@
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="text-xl font-bold text-gray-900 mb-6">Keep Reading</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <a href="#" class="block bg-white rounded-xl shadow-md hover:shadow-lg transition p-5 border border-gray-100">
-          <span class="text-xs font-semibold text-primary">Japanese Alps</span>
-          <h3 class="font-bold text-gray-900 mt-1 text-sm">Hida Beef, Morning Markets & Sake Breweries</h3>
-          <p class="text-xs text-gray-500 mt-1">A food lover's guide to Takayama.</p>
+        <a href="kobe-beef-guide.html" class="block bg-white rounded-xl shadow-md hover:shadow-lg transition p-5 border border-gray-100">
+          <span class="text-xs font-semibold text-primary">Beyond Kyoto &amp; Osaka</span>
+          <h3 class="font-bold text-gray-900 mt-1 text-sm">The Kobe Beef Guide: Where Locals Actually Eat</h3>
+          <p class="text-xs text-gray-500 mt-1">Eat it at lunch, not dinner. KOKUBU steakhouse, &yen;6,000.</p>
         </a>
-        <a href="#" class="block bg-white rounded-xl shadow-md hover:shadow-lg transition p-5 border border-gray-100">
+        <a href="koyasan-okunoin.html" class="block bg-white rounded-xl shadow-md hover:shadow-lg transition p-5 border border-gray-100">
           <span class="text-xs font-semibold text-primary">Japanese Alps</span>
-          <h3 class="font-bold text-gray-900 mt-1 text-sm">Walking the Nakasendo: Tsumago to Magome</h3>
-          <p class="text-xs text-gray-500 mt-1">The most peaceful day in your entire trip.</p>
+          <h3 class="font-bold text-gray-900 mt-1 text-sm">Okunoin at Dawn: Walking Koyasan&rsquo;s Cemetery</h3>
+          <p class="text-xs text-gray-500 mt-1">Temple stay, cemetery at dawn, vegetarian monk cuisine.</p>
         </a>
-        <a href="#" class="block bg-white rounded-xl shadow-md hover:shadow-lg transition p-5 border border-gray-100">
+        <a href="kinosaki-onsen-hop.html" class="block bg-white rounded-xl shadow-md hover:shadow-lg transition p-5 border border-gray-100">
           <span class="text-xs font-semibold text-primary">Beyond Kyoto & Osaka</span>
           <h3 class="font-bold text-gray-900 mt-1 text-sm">How to Onsen-Hop Kinosaki in One Evening</h3>
           <p class="text-xs text-gray-500 mt-1">Seven baths, one yukata, one town.</p>
