@@ -1,0 +1,11 @@
+# Alternative Japan Travel — robots.txt
+# Currently blocking all crawlers (site in development)
+# When ready to launch: remove Disallow and uncomment Allow lines
+
+User-agent: *
+Disallow: /
+
+# Launch-ready version (uncomment when ready):
+# User-agent: *
+# Allow: /
+# Sitemap: https://alternative-japan-travel.vercel.app/sitemap.xml
