@@ -2,6 +2,9 @@
 *.mp4
 *.mov
 
+# Allow hero videos for site pages
+!Videos/Greater Tokyo/Greater_Tokyo_All.mp4
+
 # Large images/screenshots
 *.png
 
