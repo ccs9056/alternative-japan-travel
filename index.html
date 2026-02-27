@@ -68,84 +68,6 @@
       opacity: 1;
     }
 
-    /* Field Notes — Two-Row Layout with Hover Resize */
-    .notes-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-    .notes-row {
-      display: flex;
-      gap: 1rem;
-    }
-    /* Top row defaults */
-    .notes-row-top { height: 350px; }
-    .notes-row-top .note-card { flex: 5; transition: flex 0.45s ease, box-shadow 0.35s ease; }
-    .notes-row-top .note-card:nth-child(1) { flex: 7; }
-
-    /* Top row hover: hovered card grows, sibling shrinks */
-    .notes-row-top .note-card:hover { flex: 7; }
-    .notes-row-top:has(.note-card:nth-child(2):hover) .note-card:nth-child(1) { flex: 5; }
-
-    /* Bottom row defaults */
-    .notes-row-bottom { height: 200px; }
-    .notes-row-bottom .note-card { flex: 1; transition: flex 0.45s ease, box-shadow 0.35s ease; }
-
-    /* Bottom row hover: hovered card grows wide, siblings shrink */
-    .notes-row-bottom .note-card:hover { flex: 2.5; }
-    .notes-row-bottom:has(.note-card:hover) .note-card:not(:hover) { flex: 0.75; }
-
-    /* Cross-row: hovering bottom row shrinks top, grows bottom (and vice versa) */
-    .notes-grid:has(.notes-row-bottom .note-card:hover) .notes-row-top { height: 220px; }
-    .notes-grid:has(.notes-row-bottom .note-card:hover) .notes-row-bottom { height: 330px; }
-    .notes-row-top, .notes-row-bottom {
-      transition: height 0.45s ease;
-    }
-
-    .note-card {
-      position: relative;
-      overflow: hidden;
-      cursor: pointer;
-      border-radius: 1rem;
-      background-size: cover;
-      background-position: center;
-      z-index: 1;
-    }
-
-    /* Hover glow */
-    .note-card:hover {
-      z-index: 10;
-      box-shadow: 0 20px 44px rgba(0,0,0,0.3);
-    }
-    /* Teaser text: hidden, revealed on hover */
-    .note-card .note-detail {
-      opacity: 0;
-      max-height: 0;
-      overflow: hidden;
-      transition: opacity 0.3s ease 0.1s, max-height 0.3s ease;
-    }
-    .note-card:hover .note-detail {
-      opacity: 1;
-      max-height: 100px;
-    }
-
-    /* Mobile: simple stack */
-    @media (max-width: 767px) {
-      .notes-row {
-        flex-direction: column;
-        height: auto !important;
-      }
-      .notes-row-top .note-card,
-      .notes-row-bottom .note-card {
-        height: 220px !important;
-        flex: none !important;
-      }
-      .note-card .note-detail {
-        opacity: 1;
-        max-height: 100px;
-      }
-    }
-
     /* Smooth scroll */
     html { scroll-behavior: smooth; }
 
@@ -189,7 +111,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
         <!-- Logo -->
-        <a href="#" class="text-xl font-bold text-gray-900 tracking-tight">
+        <a href="index.html" class="text-xl font-bold text-gray-900 tracking-tight">
           <span class="text-primary">Alternative</span> Japan
         </a>
 
@@ -208,12 +130,6 @@
               </div>
             </div>
           </div>
-          <a href="#vibes" class="text-sm font-medium text-gray-600 hover:text-primary transition">By Interest</a>
-          <a href="#field-notes" class="text-sm font-medium text-gray-600 hover:text-primary transition">Field Notes</a>
-          <a href="#plan" class="text-sm font-medium text-gray-600 hover:text-primary transition">Plan Your Trip</a>
-          <a href="#signup" class="bg-primary text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-primary-dark transition">
-            Get the Guide
-          </a>
         </div>
 
         <!-- Mobile Menu Button -->
@@ -233,13 +149,6 @@
         <a href="japanese-alps.html" class="block text-sm text-gray-600 hover:text-primary py-1 pl-3">The Japanese Alps</a>
         <a href="northern-japan.html" class="block text-sm text-gray-600 hover:text-primary py-1 pl-3">Northern Japan</a>
         <a href="okinawa.html" class="block text-sm text-gray-600 hover:text-primary py-1 pl-3">Okinawa & Ryukyu Islands</a>
-        <div class="border-t border-gray-100 mt-2 pt-2"></div>
-        <a href="#vibes" class="block text-sm font-medium text-gray-600 hover:text-primary py-2">By Interest</a>
-        <a href="#field-notes" class="block text-sm font-medium text-gray-600 hover:text-primary py-2">Field Notes</a>
-        <a href="#plan" class="block text-sm font-medium text-gray-600 hover:text-primary py-2">Plan Your Trip</a>
-        <a href="#signup" class="block bg-primary text-white px-5 py-2 rounded-full text-sm font-semibold text-center hover:bg-primary-dark transition mt-2">
-          Get the Guide
-        </a>
       </div>
     </div>
   </nav>
@@ -415,266 +324,25 @@
   </section>
 
 
-  <!-- ===================== 6. EXPLORE BY INTEREST (VIBE CARDS) ===================== -->
-  <section id="vibes" class="py-20 bg-gray-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <p class="text-primary font-semibold text-sm uppercase tracking-widest mb-2">Explore by Interest</p>
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900">What Kind of Trip Are You After?</h2>
-        <p class="text-gray-500 mt-3 max-w-xl mx-auto">Not sure where to start? Pick a vibe and we'll point you in the right direction.</p>
-      </div>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-        <!-- Card 1: Food & Regional Cuisine (828 posts — #1 interest) -->
-        <a href="#" class="group relative rounded-2xl overflow-hidden h-72 bg-cover bg-center shadow-md hover:shadow-xl transition-shadow"
-           style="background-image: url('https://placehold.co/600x400/DC2626/ffffff?text=Food+%26+Regional+Cuisine');">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent group-hover:from-black/80 transition"></div>
-          <div class="absolute bottom-6 left-6 right-6 text-white">
-            <h3 class="font-bold text-xl mb-1">Food & Regional Cuisine</h3>
-            <p class="text-sm text-white/80">The #1 reason repeat visitors come back. Regional specialties, local favorites, and the meals travelers can't stop talking about.</p>
-          </div>
-        </a>
-        <!-- Card 2: Onsen & Hot Springs (700+ combined posts — #2 interest) -->
-        <a href="#" class="group relative rounded-2xl overflow-hidden h-72 bg-cover bg-center shadow-md hover:shadow-xl transition-shadow"
-           style="background-image: url('https://placehold.co/600x400/D97706/ffffff?text=Onsen+%26+Hot+Springs');">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent group-hover:from-black/80 transition"></div>
-          <div class="absolute bottom-6 left-6 right-6 text-white">
-            <h3 class="font-bold text-xl mb-1">Onsen & Hot Springs</h3>
-            <p class="text-sm text-white/80">Mountain rotenburo, ryokan soaks, and the onsen towns worth planning a trip around. Tattoo-friendly options included.</p>
-          </div>
-        </a>
-        <!-- Card 3: Hiking & Nature (628 posts — #3 interest) -->
-        <a href="#" class="group relative rounded-2xl overflow-hidden h-72 bg-cover bg-center shadow-md hover:shadow-xl transition-shadow"
-           style="background-image: url('https://placehold.co/600x400/16A34A/ffffff?text=Hiking+%26+Nature');">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent group-hover:from-black/80 transition"></div>
-          <div class="absolute bottom-6 left-6 right-6 text-white">
-            <h3 class="font-bold text-xl mb-1">Hiking & Nature</h3>
-            <p class="text-sm text-white/80">Alpine valleys, volcanic trails, ancient pilgrimage routes, and national parks most foreign visitors never reach.</p>
-          </div>
-        </a>
-        <!-- Card 4: Temples, Shrines & History (#4 interest) -->
-        <a href="#" class="group relative rounded-2xl overflow-hidden h-72 bg-cover bg-center shadow-md hover:shadow-xl transition-shadow"
-           style="background-image: url('https://placehold.co/600x400/7C3AED/ffffff?text=Temples%2C+Shrines+%26+History');">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent group-hover:from-black/80 transition"></div>
-          <div class="absolute bottom-6 left-6 right-6 text-white">
-            <h3 class="font-bold text-xl mb-1">Temples, Shrines & History</h3>
-            <p class="text-sm text-white/80">Beyond Fushimi Inari and Senso-ji. Castle towns, mountaintop temples, and sacred sites you won't share with tour buses.</p>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ===================== 7. FIELD NOTES (ARTICLE FEED) ===================== -->
-  <section id="field-notes" class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <p class="text-primary font-semibold text-sm uppercase tracking-widest mb-2">Field Notes</p>
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900">From the Ground</h2>
-        <p class="text-gray-500 mt-3 max-w-xl mx-auto">Practical guides, trip reports, and the details you actually need to plan.</p>
-      </div>
-
-      <!-- Two-row layout: 2 top (different heights), 3 bottom (equal) -->
-      <div class="notes-grid">
-        <!-- Top Row: Kawasaki (large) + Enoshima -->
-        <div class="notes-row notes-row-top">
-          <div class="note-card"
-               style="background-image: url('https://placehold.co/900x500/1a1a2e/ffffff?text=Kawasaki');">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/25 to-transparent rounded-2xl"></div>
-            <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
-              <span class="text-xs font-semibold bg-primary px-2.5 py-0.5 rounded-full">Greater Tokyo</span>
-              <h3 class="note-headline text-lg font-bold mt-2 transition-all duration-300">Kawasaki After Dark</h3>
-              <div class="note-detail mt-2">
-                <p class="text-sm text-white/80">Neon-lit factory complexes, rooftop views of industrial Keihin, and izakayas the tourists never find.</p>
-                <span class="inline-flex items-center gap-1 text-sm font-semibold text-primary mt-2">Read more <i class="fas fa-arrow-right text-xs"></i></span>
-              </div>
-            </div>
-          </div>
-
-          <div class="note-card"
-               style="background-image: url('https://placehold.co/900x500/2D5016/ffffff?text=Enoshima');">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/25 to-transparent rounded-2xl"></div>
-            <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
-              <span class="text-xs font-semibold bg-primary px-2.5 py-0.5 rounded-full">Day Trips</span>
-              <h3 class="note-headline text-lg font-bold mt-2 transition-all duration-300">Enoshima in a Day</h3>
-              <div class="note-detail mt-2">
-                <p class="text-sm text-white/80">A sacred island just an hour from Shinjuku — shrine trails, ocean caves, and golden hour views.</p>
-                <span class="inline-flex items-center gap-1 text-sm font-semibold text-primary mt-2">Read more <i class="fas fa-arrow-right text-xs"></i></span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Bottom Row: Mitake, Hottarakashi, Oshima -->
-        <div class="notes-row notes-row-bottom">
-          <div class="note-card"
-               style="background-image: url('https://placehold.co/900x500/4A90D9/ffffff?text=Mt+Mitake');">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/25 to-transparent rounded-2xl"></div>
-            <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
-              <span class="text-xs font-semibold bg-primary px-2.5 py-0.5 rounded-full">Mountains</span>
-              <h3 class="note-headline text-lg font-bold mt-2 transition-all duration-300">Mt. Mitake</h3>
-              <div class="note-detail mt-2">
-                <p class="text-sm text-white/80">Ancient cedar forests, mountaintop shrines, and trail running an hour from central Tokyo.</p>
-                <span class="inline-flex items-center gap-1 text-sm font-semibold text-primary mt-2">Read more <i class="fas fa-arrow-right text-xs"></i></span>
-              </div>
-            </div>
-          </div>
-
-          <div class="note-card"
-               style="background-image: url('https://placehold.co/900x500/FF6B35/ffffff?text=Hottarakashi');">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/25 to-transparent rounded-2xl"></div>
-            <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
-              <span class="text-xs font-semibold bg-primary px-2.5 py-0.5 rounded-full">Onsen</span>
-              <h3 class="note-headline text-lg font-bold mt-2 transition-all duration-300">Hottarakashi Onsen</h3>
-              <div class="note-detail mt-2">
-                <p class="text-sm text-white/80">Wake up at 4am, soak in an open-air bath, watch Fuji emerge at dawn. Worth every lost hour of sleep.</p>
-                <span class="inline-flex items-center gap-1 text-sm font-semibold text-primary mt-2">Read more <i class="fas fa-arrow-right text-xs"></i></span>
-              </div>
-            </div>
-          </div>
-
-          <div class="note-card"
-               style="background-image: url('https://placehold.co/900x500/6B21A8/ffffff?text=Oshima');">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/25 to-transparent rounded-2xl"></div>
-            <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
-              <span class="text-xs font-semibold bg-primary px-2.5 py-0.5 rounded-full">Islands</span>
-              <h3 class="note-headline text-lg font-bold mt-2 transition-all duration-300">Oshima</h3>
-              <div class="note-detail mt-2">
-                <p class="text-sm text-white/80">Active volcano, black sand beaches, and camellia forests — a 2-hour ferry from Tokyo's city center.</p>
-                <span class="inline-flex items-center gap-1 text-sm font-semibold text-primary mt-2">Read more <i class="fas fa-arrow-right text-xs"></i></span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ===================== 8. PLAN SMART, TRAVEL EASY (AFFILIATE SECTION) ===================== -->
-  <section id="plan" class="py-20 bg-gray-50">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <p class="text-primary font-semibold text-sm uppercase tracking-widest mb-2">Essential Tools</p>
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Plan Smart, Travel Easy</h2>
-        <p class="text-gray-500 mt-3 max-w-xl mx-auto">Our recommended tools and services to make your Japan trip seamless.</p>
-      </div>
-
-      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-        <!-- Flights -->
-        <a href="#" class="bg-white rounded-2xl p-6 text-center shadow-sm hover:shadow-lg transition-shadow group">
-          <div class="w-14 h-14 mx-auto mb-4 bg-red-50 rounded-xl flex items-center justify-center group-hover:bg-primary/10 transition">
-            <i class="fas fa-plane text-primary text-xl"></i>
-          </div>
-          <h3 class="font-semibold text-gray-900 text-sm">Flights</h3>
-          <p class="text-xs text-gray-400 mt-1">Best deals to Japan</p>
-        </a>
-        <!-- Hotels -->
-        <a href="#" class="bg-white rounded-2xl p-6 text-center shadow-sm hover:shadow-lg transition-shadow group">
-          <div class="w-14 h-14 mx-auto mb-4 bg-red-50 rounded-xl flex items-center justify-center group-hover:bg-primary/10 transition">
-            <i class="fas fa-hotel text-primary text-xl"></i>
-          </div>
-          <h3 class="font-semibold text-gray-900 text-sm">Hotels</h3>
-          <p class="text-xs text-gray-400 mt-1">Top-rated stays</p>
-        </a>
-        <!-- Rail Pass -->
-        <a href="#" class="bg-white rounded-2xl p-6 text-center shadow-sm hover:shadow-lg transition-shadow group">
-          <div class="w-14 h-14 mx-auto mb-4 bg-red-50 rounded-xl flex items-center justify-center group-hover:bg-primary/10 transition">
-            <i class="fas fa-train text-primary text-xl"></i>
-          </div>
-          <h3 class="font-semibold text-gray-900 text-sm">Rail Pass</h3>
-          <p class="text-xs text-gray-400 mt-1">JR Pass savings</p>
-        </a>
-        <!-- SIM Card -->
-        <a href="#" class="bg-white rounded-2xl p-6 text-center shadow-sm hover:shadow-lg transition-shadow group">
-          <div class="w-14 h-14 mx-auto mb-4 bg-red-50 rounded-xl flex items-center justify-center group-hover:bg-primary/10 transition">
-            <i class="fas fa-sim-card text-primary text-xl"></i>
-          </div>
-          <h3 class="font-semibold text-gray-900 text-sm">SIM / eSIM</h3>
-          <p class="text-xs text-gray-400 mt-1">Stay connected</p>
-        </a>
-        <!-- Travel Insurance -->
-        <a href="#" class="bg-white rounded-2xl p-6 text-center shadow-sm hover:shadow-lg transition-shadow group">
-          <div class="w-14 h-14 mx-auto mb-4 bg-red-50 rounded-xl flex items-center justify-center group-hover:bg-primary/10 transition">
-            <i class="fas fa-shield-halved text-primary text-xl"></i>
-          </div>
-          <h3 class="font-semibold text-gray-900 text-sm">Insurance</h3>
-          <p class="text-xs text-gray-400 mt-1">Travel with peace</p>
-        </a>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ===================== 9. EMAIL SIGNUP ===================== -->
-  <section id="signup" class="py-20 bg-gray-50">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <p class="text-primary font-semibold text-sm uppercase tracking-widest mb-2">Stay in the Loop</p>
-      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-        Get the Crowd-Free Japan Starter Guide
-      </h2>
-      <p class="text-gray-600 leading-relaxed mb-8 max-w-xl mx-auto">
-        Our free guide with crowd-free alternatives, timing tips, transit hacks, and a sample itinerary that skips the tourist crush entirely.
-      </p>
-
-      <!-- Email Signup Form (UI only) -->
-      <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto" onsubmit="event.preventDefault(); alert('Email signup coming soon!');">
-        <input type="email" placeholder="Enter your email" required
-               class="flex-1 px-5 py-3 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50 text-sm">
-        <button type="submit"
-                class="bg-primary text-white px-6 py-3 rounded-full text-sm font-semibold hover:bg-primary-dark transition whitespace-nowrap">
-          Get Free Guide
-        </button>
-      </form>
-      <p class="text-xs text-gray-400 mt-3">No spam, ever. Unsubscribe anytime.</p>
-    </div>
-  </section>
-
-
   </main>
 
   <!-- ===================== 10. FOOTER ===================== -->
   <footer class="bg-gray-900 text-white py-16">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
-        <!-- Brand -->
-        <div class="md:col-span-1">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div>
           <h3 class="text-xl font-bold mb-4"><span class="text-primary">Alternative</span> Japan</h3>
-          <p class="text-gray-400 text-sm leading-relaxed">
-            Curated alternatives to Japan's most overcrowded destinations. Skip the crowds, find the real Japan.
-          </p>
-          <!-- Social -->
-          <div class="flex gap-4 mt-6">
-            <a href="#" class="text-gray-400 hover:text-primary transition"><i class="fab fa-instagram text-lg"></i></a>
-            <a href="#" class="text-gray-400 hover:text-primary transition"><i class="fab fa-youtube text-lg"></i></a>
-            <a href="#" class="text-gray-400 hover:text-primary transition"><i class="fab fa-pinterest text-lg"></i></a>
-            <a href="#" class="text-gray-400 hover:text-primary transition"><i class="fab fa-tiktok text-lg"></i></a>
-          </div>
+          <p class="text-gray-400 text-sm leading-relaxed">Real traveler data from 956,000 posts. Skip the crowds, find the real Japan.</p>
         </div>
-
-        <!-- Destinations -->
         <div>
           <h4 class="font-semibold mb-4 text-sm uppercase tracking-widest text-gray-300">Destinations</h4>
           <ul class="space-y-2">
             <li><a href="greater-tokyo.html" class="text-gray-400 hover:text-white text-sm transition">Greater Tokyo</a></li>
-            <li><a href="beyond-kyoto-osaka.html" class="text-gray-400 hover:text-white text-sm transition">Beyond Kyoto & Osaka</a></li>
+            <li><a href="beyond-kyoto-osaka.html" class="text-gray-400 hover:text-white text-sm transition">Beyond Kyoto &amp; Osaka</a></li>
             <li><a href="southern-japan.html" class="text-gray-400 hover:text-white text-sm transition">Southern Japan</a></li>
             <li><a href="japanese-alps.html" class="text-gray-400 hover:text-white text-sm transition">The Japanese Alps</a></li>
             <li><a href="northern-japan.html" class="text-gray-400 hover:text-white text-sm transition">Northern Japan</a></li>
-            <li><a href="okinawa.html" class="text-gray-400 hover:text-white text-sm transition">Okinawa & Ryukyu Islands</a></li>
-          </ul>
-        </div>
-
-        <div class="md:col-span-2">
-          <h4 class="font-semibold mb-4 text-sm uppercase tracking-widest text-gray-300">Field Notes</h4>
-          <ul class="space-y-2 md:columns-2">
-            <li><a href="kanazawa-vs-kyoto.html" class="text-gray-400 hover:text-white text-sm transition">Kanazawa vs Kyoto</a></li>
-            <li><a href="kobe-beef-guide.html" class="text-gray-400 hover:text-white text-sm transition">Kobe Beef Guide</a></li>
-            <li><a href="kinosaki-onsen-hop.html" class="text-gray-400 hover:text-white text-sm transition">Kinosaki Onsen-Hop</a></li>
-            <li><a href="koyasan-okunoin.html" class="text-gray-400 hover:text-white text-sm transition">Koyasan &amp; Okunoin</a></li>
-            <li><a href="kumano-kodo-guide.html" class="text-gray-400 hover:text-white text-sm transition">Kumano Kodo Guide</a></li>
-            <li><a href="mt-shosha-himeji.html" class="text-gray-400 hover:text-white text-sm transition">Mt. Shosha &amp; Himeji</a></li>
+            <li><a href="okinawa.html" class="text-gray-400 hover:text-white text-sm transition">Okinawa &amp; Ryukyu Islands</a></li>
           </ul>
         </div>
       </div>

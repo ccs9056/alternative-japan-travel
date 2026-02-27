@@ -42,29 +42,7 @@
     html { scroll-behavior: smooth; }
     .stay-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
     .stay-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(0,0,0,0.12); }
-    .notes-grid { display: flex; flex-direction: column; gap: 1rem; }
-    .notes-row { display: flex; gap: 1rem; }
-    .notes-row-top { height: 350px; }
-    .notes-row-top .note-card { flex: 5; transition: flex 0.45s ease, box-shadow 0.35s ease; }
-    .notes-row-top .note-card:nth-child(1) { flex: 7; }
-    .notes-row-top .note-card:hover { flex: 7; }
-    .notes-row-top:has(.note-card:nth-child(2):hover) .note-card:nth-child(1) { flex: 5; }
-    .notes-row-bottom { height: 200px; }
-    .notes-row-bottom .note-card { flex: 1; transition: flex 0.45s ease, box-shadow 0.35s ease; }
-    .notes-row-bottom .note-card:hover { flex: 2.5; }
-    .notes-row-bottom:has(.note-card:hover) .note-card:not(:hover) { flex: 0.75; }
-    .notes-grid:has(.notes-row-bottom .note-card:hover) .notes-row-top { height: 220px; }
-    .notes-grid:has(.notes-row-bottom .note-card:hover) .notes-row-bottom { height: 330px; }
-    .notes-row-top, .notes-row-bottom { transition: height 0.45s ease; }
-    .note-card { position: relative; overflow: hidden; cursor: pointer; border-radius: 1rem; background-size: cover; background-position: center; z-index: 1; }
-    .note-card:hover { z-index: 10; box-shadow: 0 20px 44px rgba(0,0,0,0.3); }
-    .note-card .note-detail { opacity: 0; max-height: 0; overflow: hidden; transition: opacity 0.3s ease 0.1s, max-height 0.3s ease; }
-    .note-card:hover .note-detail { opacity: 1; max-height: 100px; }
-
     @media (max-width: 767px) {
-      .notes-row { flex-direction: column; height: auto !important; }
-      .notes-row-top .note-card, .notes-row-bottom .note-card { height: 220px !important; flex: none !important; }
-      .note-card .note-detail { opacity: 1; max-height: 100px; }
       .stay-card:hover { transform: none; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
     }
 
@@ -176,8 +154,7 @@
             </div>
           </div>
           <a href="#destinations" class="text-sm font-medium text-gray-600 hover:text-primary transition">Stay Overnight</a>
-          <a href="#field-notes" class="text-sm font-medium text-gray-600 hover:text-primary transition">Field Notes</a>
-          <a href="index.html#ebook" class="bg-primary text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-primary-dark transition">Start Here</a>
+          <a href="index.html" class="bg-primary text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-primary-dark transition">Start Here</a>
         </div>
         <button id="mobile-menu-btn" class="md:hidden text-gray-600 focus:outline-none"><i class="fas fa-bars text-xl"></i></button>
       </div>
@@ -194,8 +171,7 @@
         <a href="okinawa.html" class="block text-sm text-primary font-semibold py-1 pl-3">Okinawa & Ryukyu Islands</a>
         <div class="border-t border-gray-100 mt-2 pt-2"></div>
         <a href="#destinations" class="block text-sm font-medium text-gray-600 hover:text-primary py-2">Stay Overnight</a>
-        <a href="#field-notes" class="block text-sm font-medium text-gray-600 hover:text-primary py-2">Field Notes</a>
-        <a href="index.html#ebook" class="block bg-primary text-white px-5 py-2 rounded-full text-sm font-semibold text-center hover:bg-primary-dark transition mt-2">Start Here</a>
+        <a href="index.html" class="block bg-primary text-white px-5 py-2 rounded-full text-sm font-semibold text-center hover:bg-primary-dark transition mt-2">Start Here</a>
       </div>
     </div>
   </nav>
@@ -264,29 +240,6 @@
             </p>
             <div class="flex items-center justify-between">
               <span class="text-xs text-gray-400"><i class="fas fa-map-marker-alt mr-1"></i> Your base for this region</span>
-              <a href="#" class="inline-flex items-center text-primary font-semibold text-sm hover:underline">Browse Stays <i class="fas fa-arrow-right ml-1 text-xs"></i></a>
-            </div>
-          </div>
-        </div>
-
-        <!-- 2. Kerama Islands -->
-        <div class="stay-card bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100">
-          <div class="h-52 bg-cover bg-center relative" style="background-image: url('https://placehold.co/600x400/0891B2/ffffff?text=Kerama+Islands');">
-            <div class="absolute top-4 left-4">
-              <span class="text-xs font-semibold bg-white/90 text-gray-800 px-3 py-1 rounded-full shadow-sm">
-                <i class="fas fa-ship mr-1 text-primary"></i> 35 min ferry from Naha
-              </span>
-            </div>
-          </div>
-          <div class="p-6">
-            <h3 class="font-bold text-xl text-gray-900 mb-1">Kerama Islands</h3>
-            <p class="text-sm font-medium text-primary mb-3">World-Class Beaches, 30 Minutes Away</p>
-            <p class="text-sm text-gray-600 leading-relaxed mb-4">
-              Zamami and Tokashiki: two small islands with white sand beaches, 35-50 minutes by ferry from Naha. Sea turtles in the shallows, visibility past 30 meters, and islands small enough to bike in an hour. Guesthouses include meals. Book ferries ahead in summer and Golden Week; they sell out.
-            </p>
-            <div class="flex items-center justify-between">
-              <span class="text-xs text-gray-400"><i class="fas fa-moon mr-1"></i> 1–2 nights recommended</span>
-              <a href="#" class="inline-flex items-center text-primary font-semibold text-sm hover:underline">Browse Guesthouses <i class="fas fa-arrow-right ml-1 text-xs"></i></a>
             </div>
           </div>
         </div>
@@ -308,29 +261,6 @@
             </p>
             <div class="flex items-center justify-between">
               <span class="text-xs text-gray-400"><i class="fas fa-moon mr-1"></i> 3–5 nights recommended</span>
-              <a href="#" class="inline-flex items-center text-primary font-semibold text-sm hover:underline">Browse Stays <i class="fas fa-arrow-right ml-1 text-xs"></i></a>
-            </div>
-          </div>
-        </div>
-
-        <!-- 4. Miyako-jima -->
-        <div class="stay-card bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100">
-          <div class="h-52 bg-cover bg-center relative" style="background-image: url('https://placehold.co/600x400/0EA5E9/ffffff?text=Miyako-jima');">
-            <div class="absolute top-4 left-4">
-              <span class="text-xs font-semibold bg-white/90 text-gray-800 px-3 py-1 rounded-full shadow-sm">
-                <i class="fas fa-plane mr-1 text-primary"></i> 45 min from Naha
-              </span>
-            </div>
-          </div>
-          <div class="p-6">
-            <h3 class="font-bold text-xl text-gray-900 mb-1">Miyako-jima</h3>
-            <p class="text-sm font-medium text-primary mb-3">Japan's Best Beaches</p>
-            <p class="text-sm text-gray-600 leading-relaxed mb-4">
-              The best beaches in Japan. White sand, turquoise water, and coral reefs you can wade to. Three bridges connect to smaller islands with their own beaches. A loop bus and hotel shuttles exist, but a car opens up the island significantly. Direct flights from Tokyo (3 hrs) and Osaka.
-            </p>
-            <div class="flex items-center justify-between">
-              <span class="text-xs text-gray-400"><i class="fas fa-moon mr-1"></i> 2–3 nights recommended</span>
-              <a href="#" class="inline-flex items-center text-primary font-semibold text-sm hover:underline">Browse Resorts <i class="fas fa-arrow-right ml-1 text-xs"></i></a>
             </div>
           </div>
         </div>
@@ -352,29 +282,6 @@
             </p>
             <div class="flex items-center justify-between">
               <span class="text-xs text-gray-400"><i class="fas fa-moon mr-1"></i> 1–2 nights recommended</span>
-              <a href="#" class="inline-flex items-center text-primary font-semibold text-sm hover:underline">Browse Resorts <i class="fas fa-arrow-right ml-1 text-xs"></i></a>
-            </div>
-          </div>
-        </div>
-
-        <!-- 6. Iriomote -->
-        <div class="stay-card bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100">
-          <div class="h-52 bg-cover bg-center relative" style="background-image: url('https://placehold.co/600x400/15803D/ffffff?text=Iriomote');">
-            <div class="absolute top-4 left-4">
-              <span class="text-xs font-semibold bg-white/90 text-gray-800 px-3 py-1 rounded-full shadow-sm">
-                <i class="fas fa-ship mr-1 text-primary"></i> 40 min ferry from Ishigaki
-              </span>
-            </div>
-          </div>
-          <div class="p-6">
-            <h3 class="font-bold text-xl text-gray-900 mb-1">Iriomote</h3>
-            <p class="text-sm font-medium text-primary mb-3">UNESCO Jungle Island</p>
-            <p class="text-sm text-gray-600 leading-relaxed mb-4">
-              Ninety percent jungle, UNESCO World Heritage since 2021. Mangrove kayaking, waterfall trekking, and beaches with nobody on them. Pre-book guided tours: they include hotel pickup, which matters because all taxi companies on the island have closed. The bus runs four times daily. Come for the adventure, not the convenience.
-            </p>
-            <div class="flex items-center justify-between">
-              <span class="text-xs text-gray-400"><i class="fas fa-moon mr-1"></i> 2 nights recommended</span>
-              <a href="#" class="inline-flex items-center text-primary font-semibold text-sm hover:underline">Browse Stays <i class="fas fa-arrow-right ml-1 text-xs"></i></a>
             </div>
           </div>
         </div>
@@ -389,78 +296,6 @@
         <button class="carousel-dot w-2.5 h-2.5 rounded-full bg-gray-300 transition-colors" aria-label="Card 4"></button>
         <button class="carousel-dot w-2.5 h-2.5 rounded-full bg-gray-300 transition-colors" aria-label="Card 5"></button>
         <button class="carousel-dot w-2.5 h-2.5 rounded-full bg-gray-300 transition-colors" aria-label="Card 6"></button>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== FIELD NOTES ===================== -->
-  <section id="field-notes" class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <p class="text-primary font-semibold text-sm uppercase tracking-widest mb-2">Field Notes</p>
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900">From the Ground — Okinawa</h2>
-        <p class="text-gray-500 mt-3 max-w-xl mx-auto">Deep dives, trip reports, and practical guides for the islands.</p>
-      </div>
-      <div class="notes-grid">
-        <div class="notes-row notes-row-top">
-          <div class="note-card" style="background-image: url('https://placehold.co/900x500/0891B2/ffffff?text=Kerama');">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/25 to-transparent rounded-2xl"></div>
-            <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
-              <span class="text-xs font-semibold bg-primary px-2.5 py-0.5 rounded-full">Kerama</span>
-              <h3 class="text-lg font-bold mt-2">30 Minutes to Paradise: Zamami & Tokashiki</h3>
-              <div class="note-detail mt-2">
-                <p class="text-sm text-white/80">Ferry logistics, which beaches to hit, snorkeling spots, and why one night changes everything.</p>
-                <span class="inline-flex items-center gap-1 text-sm font-semibold text-primary mt-2">Read more <i class="fas fa-arrow-right text-xs"></i></span>
-              </div>
-            </div>
-          </div>
-          <div class="note-card" style="background-image: url('https://placehold.co/900x500/059669/ffffff?text=Ishigaki');">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/25 to-transparent rounded-2xl"></div>
-            <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
-              <span class="text-xs font-semibold bg-primary px-2.5 py-0.5 rounded-full">Yaeyama</span>
-              <h3 class="text-lg font-bold mt-2">Island-Hopping the Yaeyama Chain</h3>
-              <div class="note-detail mt-2">
-                <p class="text-sm text-white/80">Ishigaki as your base, day trips to Taketomi and Iriomote, ferry schedules, and the best snorkeling spots.</p>
-                <span class="inline-flex items-center gap-1 text-sm font-semibold text-primary mt-2">Read more <i class="fas fa-arrow-right text-xs"></i></span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="notes-row notes-row-bottom">
-          <div class="note-card" style="background-image: url('https://placehold.co/900x500/D97706/ffffff?text=Okinawan+Food');">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/25 to-transparent rounded-2xl"></div>
-            <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
-              <span class="text-xs font-semibold bg-primary px-2.5 py-0.5 rounded-full">Food</span>
-              <h3 class="text-lg font-bold mt-2">Okinawan Food: Not Mainland Japanese</h3>
-              <div class="note-detail mt-2">
-                <p class="text-sm text-white/80">Goya champuru, soki soba, taco rice — what to eat and where to find it beyond Kokusai-dori.</p>
-                <span class="inline-flex items-center gap-1 text-sm font-semibold text-primary mt-2">Read more <i class="fas fa-arrow-right text-xs"></i></span>
-              </div>
-            </div>
-          </div>
-          <div class="note-card" style="background-image: url('https://placehold.co/900x500/0EA5E9/ffffff?text=Miyako+Beaches');">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/25 to-transparent rounded-2xl"></div>
-            <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
-              <span class="text-xs font-semibold bg-primary px-2.5 py-0.5 rounded-full">Miyako</span>
-              <h3 class="text-lg font-bold mt-2">Miyako-jima: Japan's Beach Champion</h3>
-              <div class="note-detail mt-2">
-                <p class="text-sm text-white/80">The beaches that keep winning "best in Japan" arguments. Which ones, how to reach them, and the car rental reality.</p>
-                <span class="inline-flex items-center gap-1 text-sm font-semibold text-primary mt-2">Read more <i class="fas fa-arrow-right text-xs"></i></span>
-              </div>
-            </div>
-          </div>
-          <div class="note-card" style="background-image: url('https://placehold.co/900x500/15803D/ffffff?text=Iriomote+Jungle');">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/25 to-transparent rounded-2xl"></div>
-            <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
-              <span class="text-xs font-semibold bg-primary px-2.5 py-0.5 rounded-full">Adventure</span>
-              <h3 class="text-lg font-bold mt-2">Iriomote: Kayaks, Waterfalls & No Taxis</h3>
-              <div class="note-detail mt-2">
-                <p class="text-sm text-white/80">Booking guided tours, navigating the 4-a-day bus, and why this UNESCO island rewards planning.</p>
-                <span class="inline-flex items-center gap-1 text-sm font-semibold text-primary mt-2">Read more <i class="fas fa-arrow-right text-xs"></i></span>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -496,12 +331,6 @@
         <div class="md:col-span-1">
           <h3 class="text-xl font-bold mb-4"><span class="text-primary">Alternative</span> Japan</h3>
           <p class="text-gray-400 text-sm leading-relaxed">Curated alternatives to Japan's most overcrowded destinations. Skip the crowds, find the real Japan.</p>
-          <div class="flex gap-4 mt-6">
-            <a href="#" class="text-gray-400 hover:text-primary transition"><i class="fab fa-instagram text-lg"></i></a>
-            <a href="#" class="text-gray-400 hover:text-primary transition"><i class="fab fa-youtube text-lg"></i></a>
-            <a href="#" class="text-gray-400 hover:text-primary transition"><i class="fab fa-pinterest text-lg"></i></a>
-            <a href="#" class="text-gray-400 hover:text-primary transition"><i class="fab fa-tiktok text-lg"></i></a>
-          </div>
         </div>
         <div>
           <h4 class="font-semibold mb-4 text-sm uppercase tracking-widest text-gray-300">Destinations</h4>
