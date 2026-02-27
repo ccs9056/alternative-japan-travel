@@ -4,65 +4,69 @@
     "title": "Kanazawa vs Kyoto: The Honest Comparison",
     "region": "japanese-alps",
     "regionName": "The Japanese Alps",
-    "category": "comparison",
-    "tags": ["comparison"],
-    "date": "2026-02-26",
+    "category": "Comparison",
     "teaser": "Do Kyoto first. Do Kanazawa second. Here's why.",
-    "readTime": 8
-  },
-  {
-    "slug": "kinosaki-onsen-hop",
-    "title": "How to Onsen-Hop Kinosaki in One Evening",
-    "region": "beyond-kyoto-osaka",
-    "regionName": "Beyond Kyoto & Osaka",
-    "category": "how-to",
-    "tags": ["onsen", "how-to"],
-    "date": "2026-02-26",
-    "teaser": "Seven baths, one yukata, one town. Stay overnight.",
-    "readTime": 10
-  },
-  {
-    "slug": "koyasan-okunoin",
-    "title": "Okunoin at Dawn: Walking Koyasan's Cemetery",
-    "region": "beyond-kyoto-osaka",
-    "regionName": "Beyond Kyoto & Osaka",
-    "category": "deep-dive",
-    "tags": ["temples", "deep-dive"],
-    "date": "2026-02-26",
-    "teaser": "Stay overnight in a Buddhist temple. Walk the cemetery before sunrise.",
-    "readTime": 10
-  },
-  {
-    "slug": "kumano-kodo-guide",
-    "title": "Kumano Kodo: The Pilgrim's Practical Guide",
-    "region": "beyond-kyoto-osaka",
-    "regionName": "Beyond Kyoto & Osaka",
-    "category": "how-to",
-    "tags": ["pilgrimage", "hiking", "how-to"],
-    "date": "2026-02-26",
-    "teaser": "Japan's best multi-day walk. Three days, two nights, one ancient trail.",
-    "readTime": 10
+    "readTime": "8 min",
+    "date": "2026-02-26"
   },
   {
     "slug": "kobe-beef-guide",
     "title": "The Kobe Beef Guide: Where Locals Actually Eat",
     "region": "beyond-kyoto-osaka",
     "regionName": "Beyond Kyoto & Osaka",
-    "category": "food",
-    "tags": ["food"],
-    "date": "2026-02-26",
+    "category": "Food Guide",
     "teaser": "Eat it at lunch, not dinner. Book KOKUBU. Order less than you think.",
-    "readTime": 7
+    "readTime": "7 min",
+    "date": "2026-02-26"
+  },
+  {
+    "slug": "kinosaki-onsen-hop",
+    "title": "How to Onsen-Hop Kinosaki in One Evening",
+    "region": "beyond-kyoto-osaka",
+    "regionName": "Beyond Kyoto & Osaka",
+    "category": "How-To / Onsen",
+    "teaser": "Seven baths, one yukata, one town. Stay overnight.",
+    "readTime": "10 min",
+    "date": "2026-02-26"
+  },
+  {
+    "slug": "koyasan-okunoin",
+    "title": "Okunoin at Dawn: Walking Koyasan's Cemetery",
+    "region": "beyond-kyoto-osaka",
+    "regionName": "Beyond Kyoto & Osaka",
+    "category": "Deep Dive",
+    "teaser": "Stay overnight in a Buddhist temple. Walk the cemetery before sunrise.",
+    "readTime": "10 min",
+    "date": "2026-02-26"
+  },
+  {
+    "slug": "kumano-kodo-guide",
+    "title": "Kumano Kodo: The Pilgrim's Practical Guide",
+    "region": "beyond-kyoto-osaka",
+    "regionName": "Beyond Kyoto & Osaka",
+    "category": "Pilgrimage / How-To",
+    "teaser": "Japan's best multi-day walk. Three days, two nights, one ancient trail.",
+    "readTime": "10 min",
+    "date": "2026-02-26"
   },
   {
     "slug": "mt-shosha-himeji",
     "title": "Mt. Shosha: The Temple Behind the Castle",
     "region": "beyond-kyoto-osaka",
     "regionName": "Beyond Kyoto & Osaka",
-    "category": "deep-dive",
-    "tags": ["temples", "deep-dive"],
-    "date": "2026-02-26",
+    "category": "Deep Dive",
     "teaser": "Himeji Castle is Japan's best castle. The mountain temple behind it is why you should stay all day.",
-    "readTime": 9
+    "readTime": "9 min",
+    "date": "2026-02-26"
+  },
+  {
+    "slug": "hakone",
+    "title": "Hakone's Quiet Side",
+    "region": "greater-tokyo",
+    "regionName": "Greater Tokyo",
+    "category": "Destination",
+    "teaser": "You did the ropeway and the pirate ship. Here's the Hakone you missed by not staying the night.",
+    "readTime": null,
+    "date": "2026-02-26"
   }
 ]
